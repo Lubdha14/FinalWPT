@@ -7,7 +7,7 @@ npm start
 Node----
 node filename.js
 on server
-
+127.0.0.1:portno
 
 JQUERY-----
 node filename.js
