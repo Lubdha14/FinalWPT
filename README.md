@@ -17,3 +17,6 @@ html,css,js
 
 JSON-----
 file_name.json
+
+
+https://jsonplaceholder.typicode.com/users
