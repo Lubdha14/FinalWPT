@@ -390,7 +390,7 @@ AJAX- cricket
 ‐--------
 https://jsonplaceholder.typicode.com/users
 -----------
-
+CALCULATOR
 
 html
 
@@ -520,3 +520,6 @@ function calculateResult() {
         display.value = 'Error';
     }
 }
+----------------------------
+Temperature Converter 
+
