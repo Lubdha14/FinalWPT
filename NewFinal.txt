@@ -75,6 +75,44 @@ Question:- Create a HTML form for building your
 
 Create a JSON object, array, and file to store a cricket match (or any team sport) scoreboard.
 
+Create a JSON object, array, and file to store a cricket match (or any team sport) scoreboard.
+
+
+in html file
+----------------------
+
+<!DOCTYPE html>
+<html>
+<head><title>Cricket Scoreboard</title></head>
+<body>
+
+<h2>Cricket Scoreboard</h2>
+<div id="scoreboard"></div>
+
+<script>
+    const data = {
+        "date": "2024-11-08", "venue": "Mumbai", "teams": ["Team A", "Team B"],
+        "innings": [
+            { "team": "Team A", "score": "150/8 (20)", "players": [{ "name": "Player 1", "runs": 45 }, { "name": "Player 2", "runs": 25 }] },
+            { "team": "Team B", "score": "140/9 (20)", "players": [{ "name": "Player 3", "runs": 35 }, { "name": "Player 4", "runs": 40 }] }
+        ]
+    };
+
+    document.getElementById("scoreboard").innerHTML = `
+        <p><strong>Date:</strong> ${data.date}</p>
+        <p><strong>Venue:</strong> ${data.venue}</p>
+        <p><strong>Teams:</strong> ${data.teams.join(" vs ")}</p>
+        ${data.innings.map(inn => `
+            <h3>${inn.team} - ${inn.score}</h3>
+            ${inn.players.map(pl => `<p>${pl.name}: ${pl.runs} runs</p>`).join('')}
+        `).join('')}
+    `;
+</script>
+
+</body>
+</html>
+-------------------------------------------------------------------------------------------------
+
 {
     "match": {
       "team1": {
