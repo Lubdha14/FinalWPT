@@ -1,0 +1,553 @@
+REACTTTTT
+
+import {Component} from "react";
+export class ScoreBoard extends Component{
+constructor() //constructor is used to initialized the state
+{
+	super();
+	this.state={
+				score:0
+			}
+        this.incrementScore=this.incrementScore.bind(this);
+	}
+
+	incrementScore(){
+	this.setState({score:this.state.score+4});	
+	}
+	
+	render()// used to return user interface
+	{
+		return(
+		<div>
+			<h1>{this.state.score}</h1> //value of state will be decided by component dynamically
+			<button onClick={this.incrementScore}>+</button> 
+
+			<button>-</button>
+		</div>
+
+	);
+}
+}
+ 
+=========================================================================
+======================================================================================================
+
+jquery (SELECT ALL TAG.......)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <p>Welcome...!!!!!</p>
+    <h1>Hiiiiiii....!!</h1>
+    <h1>Hiieeee.... !!!!!</h1>
+    <p>Heeyyyy!!!!!!</p>
+    <img src="l1.jpg" alt="Image"><br>
+    <input id="a1" placeholder="Enter your name here">
+
+    <script>
+$('p').css('color','Green')</script>;
+   
+  
+</body>
+
+</html>
+
+
+
+==========================================================================
+ jquery
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+integrity="sha256-
+243
+u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>jQuery Event Handling Demo</h1>
+<button type="button" id="btn1" name="button" >Good Morning
+Warning</button>
+<button type="button" id="btn2" name="button">Good Evening
+Warning</button>
+<button type="button" id="btn3" name="button">Good Night
+Warning</button>
+<script>
+    $('#btn1').click(function(){
+        
+        $('#btn1').css('background-color','White')
+       alert("Good Morning")
+    })
+    $('#btn2').click(function(){
+        
+        $('#btn2').css('background-color','yellow')
+        alert("Good Evening")
+    })
+    $('#btn3').click(function(){
+        
+        $('#btn3').css('background-color','grey')
+        alert("Good Night")
+    })
+</script>
+</body>
+</html> 
+===================================================================================
+==================================================================================
+
+destructing arrays
+
+function getValues() {
+    return [1, 2, 3];
+  }
+  
+  const [x, y, z] = getValues();
+  console.log(y); 
+  
+  // Output: 1
+
+run==== node filename.js
+===============================================================
+
+spread operator
+
+const numbers = [1, 2, 3, 4, 5];
+
+function sum(x, y, z,w) {
+    return x + y + z+w;
+}
+// Using spread operator to pass array elements as arguments
+// const result = sum(...numbers);
+console.log(sum(...numbers)); //op 1+2+3+4=10
+
+run ==== node filename.js
+=================================================================
+
+ 1 nodejs sum prog
+
+const http=require('http');
+const PORT=4700;
+const server=http.createServer((request,response)=>{
+
+var x=4;
+var y=8;
+response.write(`sum of ${x} and ${y} is ${x+y}`);
+response.end();//this function will terminate the processing of server
+});
+server.listen(4700,()=>{
+console.log("SERVER IS LISTENING ON ${PORT}");
+});
+
+run===1 node filename.js (on terminal)
+      2 go on web browser http://127.0.0.1:portno (eg. 4700)
+==============================================================
+ 2 nodejs prog factorial
+
+const http=require('http');
+const myModule=require('./node2.js');
+const PORT=6100;
+const server=http.createServer((request,response)=>{
+const factorial =(a)=>{
+    if(a==1||a==0)
+    {
+        return 1;
+    }        
+    return a*factorial(a-1);
+}
+var s=3;
+var fact=factorial(s);
+// var z=myModule.sum(1,2);
+response.write(` ${fact}`);
+response.end();//this function will terminate the processing of server
+});
+server.listen(6100,()=>{
+console.log("SERVER IS LISTENING ON ${PORT}");
+});
+
+==============================================================
+ 3 nodejs prog prime no
+
+const http = require('http');  
+const PORT = 6100;
+
+const server = http.createServer((request, response) => {
+    let n = 17; 
+
+    if (n === 0 || n === 1) {
+        response.write(`Not prime`);
+        response.end(); 
+        return;
+    }
+
+    let count = 0;
+    for (let i = 2; i <= n/2; i++) {
+        if (n % i === 0) {
+            count++;
+            break;
+        }
+    }
+
+    if (count>0) {
+        response.write(`Not Prime`);
+    } else {
+        response.write(` Prime`);
+    }
+
+    response.end(); 
+});
+
+server.listen(PORT, () => {
+    console.log(`SERVER IS LISTENING ON ${PORT}`);
+});
+===================================================================
+ 4 nodejs armstrongno
+
+const http = require('http');  
+const PORT = 6100;
+
+const server = http.createServer((request, response) => {
+    let n = 153; 
+    let dig;
+    dig=n;
+    let rem,sum,rem1,rem2;
+    rem = n%10;
+    n = n/10;
+    rem1 = n%10;
+    n=n/10;
+    rem2 = n%10;
+    // n=n/10;
+    sum = rem1*rem1*+rem2*rem2*rem2+rem*rem*rem;
+   
+if(sum==dig){
+    response.write(`Armstrong`);
+}
+else{
+    response.write(`not Armstrong`);
+}
+response.end(); 
+
+});
+server.listen(PORT, () => {
+    console.log(`SERVER IS LISTENING ON ${PORT}`);
+});
+=======================================================================
+
+5. Write a Node program that prints all the numbers between 1 and 100, each on a separate line. 
+A few caveats: 
+o if the number is divisible by 3, print "foo"
+o if the number is divisible by 5, print "b
+o if the number is divisible by both 3 and 5, print "foobar"
+
+
+const http = require('http');  
+const PORT = 6100;
+
+const server = http.createServer((request, response) => {
+   // Set the response header to indicate HTML content type
+   response.writeHead(200, { 'Content-Type': 'text/plain' });
+
+   // Node.js program to print numbers from 1 to 100 with conditions
+   for (let i = 1; i <= 100; i++) {
+       if (i % 3 === 0 && i % 5 === 0) {
+           response.write('foobar\n'); // Add newline after each output
+       } else if (i % 3 === 0) {
+           response.write('foo\n');
+       } else if (i % 5 === 0) {
+           response.write('bar\n');
+       } else {
+           response.write(i + '\n'); // Add newline after each number
+       }
+   }
+
+   response.end();  // End the response
+});
+
+server.listen(PORT, () => {
+    console.log(`SERVER IS LISTENING ON PORT ${PORT}`);
+});
+
+=======================================================================
+
+JSON
+  prog Create a JSON string from a JavaScript object
+ 
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Create a JSON string from a JavaScript object.</h2>
+<p id="demo"></p>
+
+<script>
+const obj = {name: "John", age: 30, city: "New York"};
+const myJSON = JSON.stringify(obj);
+document.getElementById("demo").innerHTML = myJSON;
+</script>
+
+</body>
+</html
+
+run ==1 write this code in .html file
+     2 copy path n run in brower
+=============================================================
+
+JSON
+Program to create json onject and array
+
+scoreboard.json
+--------------
+{
+    "match": {
+      "team1": {
+        "name": "Team A",
+        "score": {
+          "runs": 210,
+          "wickets": 5,
+          "overs": 30
+        },
+        "players": [
+          { "name": "Player 1", "runs": 45, "balls": 30 },
+          { "name": "Player 2", "runs": 60, "balls": 50 },
+          { "name": "Player 3", "runs": 30, "balls": 20 }
+        ]
+      },
+      "team2": {
+        "name": "Team B",
+        "score": {
+          "runs": 180,
+          "wickets": 7,
+          "overs": 28
+        },
+        "players": [
+          { "name": "Player A", "runs": 55, "balls": 40 },
+          { "name": "Player B", "runs": 70, "balls": 60 },
+          { "name": "Player C", "runs": 10, "balls": 15 }
+        ]
+      },
+      "status": "Team A is leading by 30 runs"
+    }
+  }
+
+Fetch the JSON data using JavaScript:
+
+=========================================================================
+
+
+AJAX CODE---- NewsApi
+
+Script.js file
+-------------
+const apiUrl = 'https://saurav.tech/NewsAPI/top-headlines/category/health/in.json';
+
+async function fetchNews() {
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        const container = document.getElementById('news-container');
+        container.innerHTML = data.articles?.map(article => 
+            `<div class="news-item">
+                <h2><a href="${article.url}" target="_blank">${article.title}</a></h2>
+                <p>${article.description || 'No description available.'}</p>
+                <p><strong>Source:</strong> ${article.source.name}</p>
+            </div>`).join('') || '<p>No news available.</p>';
+    } catch {
+        document.getElementById('news-container').innerHTML = '<p>Error loading news.</p>';
+    }
+}
+
+window.onload = fetchNews;
+------------------------------------------------------------------------------------
+news.html
+--------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live News Headlines</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Live News Headlines</h1>
+    </header>
+    <main>
+        <div id="news-container">
+            <p>Loading news...</p>
+        </div>
+    </main>
+    <footer>
+        <p>Powered by News API</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+---------------------------------------------------------------------------------
+Style .css
+------------
+
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+#news-container {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.news-item {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.news-item h2 {
+    font-size: 1.2em;
+    color: #007BFF;
+}
+
+.news-item p {
+    color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+===========================================================================================
+=========================================================================
+FORM VALIDATION
+
+
+Form.html
+--------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <form id="myForm" onsubmit="return validateForm()">
+        <!-- Name Field -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <!-- Email Field -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <!-- Age Field -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="18" required><br><br>
+
+        <!-- Phone Number Field -->
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="^\+?[1-9]\d{1,14}$" placeholder="e.g. +1234567890" required><br><br>
+
+        <!-- Password Field -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" minlength="6" required><br><br>
+
+        <!-- Confirm Password Field -->
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const age = document.getElementById('age').value;
+            const phone = document.getElementById('phone').value;
+            const gender = document.querySelector('input[name="gender"]:checked');
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Validate name (must not be empty)
+            if (name === '') {
+                alert('Name is required!');
+                return false;
+            }
+
+            // Validate email (must not be empty and must be a valid email format)
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address!');
+                return false;
+            }
+
+            // Validate age (must be 18 or older)
+            if (age < 18) {
+                alert('You must be at least 18 years old!');
+                return false;
+            }
+
+            // Validate phone number (must match the pattern)
+            const phonePattern = /^\+?[1-9]\d{1,14}$/;
+            if (!phonePattern.test(phone)) {
+                alert('Please enter a valid phone number!');
+                return false;
+            }
+
+            // Validate password (minimum 6 characters)
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters long!');
+                return false;
+            }
+
+            // Validate password confirmation (must match the password)
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return false;
+            }
+
+            // If all validations pass
+            return true;
+        }
+    </script>
+</body>
+</html>
+
+

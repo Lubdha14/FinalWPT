@@ -1,0 +1,286 @@
+
+Question:- Create a HTML form for building your
+------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 600px;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Resume Builder</h1>
+<form id="resumeForm">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone">
+
+    <label for="education">Education:</label>
+    <textarea id="education" name="education" rows="4" placeholder="List your education (e.g., Degree, Institution, Year)"></textarea>
+
+    <label for="experience">Work Experience:</label>
+    <textarea id="experience" name="experience" rows="4" placeholder="List your work experience (e.g., Job Title, Company, Years)"></textarea>
+
+    <label for="skills">Skills:</label>
+    <textarea id="skills" name="skills" rows="4" placeholder="List your skills (e.g., Programming, Design, etc.)"></textarea>
+
+    <button type="submit">Build Resume</button>
+</form>
+
+</body>
+</html>
+====================================================================
+
+Create a JSON object, array, and file to store a cricket match (or any team sport) scoreboard.
+
+{
+    "match": {
+      "team1": {
+        "name": "Team A",
+        "score": {
+          "runs": 210,
+          "wickets": 5,
+          "overs": 30
+        },
+        "players": [
+          { "name": "Player 1", "runs": 45, "balls": 30 },
+          { "name": "Player 2", "runs": 60, "balls": 50 },
+          { "name": "Player 3", "runs": 30, "balls": 20 }
+        ]
+      },
+      "team2": {
+        "name": "Team B",
+        "score": {
+          "runs": 180,
+          "wickets": 7,
+          "overs": 28
+        },
+        "players": [
+          { "name": "Player A", "runs": 55, "balls": 40 },
+          { "name": "Player B", "runs": 70, "balls": 60 },
+          { "name": "Player C", "runs": 10, "balls": 15 }
+        ]
+      },
+      "status": "Team A is leading by 30 runs"
+    }
+  }
+  ====================================================================
+
+Write a jQuery program to attach a click and double click 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click and Double-Click Events on <p> Elements</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Initial styles for paragraphs */
+        p {
+            font-size: 18px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Click or Double-click on this paragraph to see events in action!</p>
+    <p>This is another paragraph. Try clicking or double-clicking it!</p>
+    <p>Experiment with more paragraphs.</p>
+
+    <script>
+        $(document).ready(function() {
+            // Click event: change background color on click
+            $('p').click(function() {
+                $(this).css('background-color', '#f0f0f0'); // Light grey background
+                alert('Paragraph clicked!');
+            });
+
+            // Double-click event: reset background color on double-click
+            $('p').dblclick(function() {
+                $(this).css('background-color', ''); // Reset to default background
+                alert('Paragraph double-clicked!');
+            });
+        });
+    </script>
+
+</body>
+</html>
+---------------------------------------------------------------------------------
+ Write a jQuery program to hide all headings on a page when they are clicked.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide All Headings on Click</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+
+    <p>Click on any heading to hide it.</p>
+
+    <script>
+        $(document).ready(function() {
+            // When any heading (h1, h2, h3, etc.) is clicked
+            $('h1, h2, h3, h4, h5, h6').click(function() {
+                $(this).hide();  // Hide the clicked heading
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+-------------------------------------------------------------------------
+Jquery(Select all)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <p>Welcome...!!!!!</p>
+    <h1>Hiiiiiii....!!</h1>
+    <h1>Hiieeee.... !!!!!</h1>
+    <p>Heeyyyy!!!!!!</p>
+    
+    <input id="a1" placeholder="Enter your name here">
+
+    <script>
+$('p').css('color','Green')</script>;
+   
+  
+</body>
+
+</html>
+
+-------------------------------------------------------------------------
+JQUERY----
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Single Element</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <p>This is the first paragraph.</p>
+    <p>This is the second paragraph.</p>
+    <p>This is the third paragraph.</p>
+
+    <button id="get-paragraph">Get First Paragraph</button>
+    <div id="output"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#get-paragraph').click(function() {
+                var firstParagraph = $('p').first(); // Get the first <p> element
+                $('#output').text(firstParagraph.text()); // Display its text in #output div
+            });
+        });
+    </script>
+
+</body>
+</html>
+==========================================================================
+
+NODE----
+
+Write a Node program that prints all the numbers between 1 and 100, each on a separate line. 
+A few caveats: 
+o if the number is divisible by 3, print "foo"
+o if the number is divisible by 5, print "b
+o if the number is divisible by both 3 and 5, print "foobar"
+
+
+const http = require('http');  
+const PORT = 6100;
+
+const server = http.createServer((request, response) => {
+   // Set the response header to indicate HTML content type
+   response.writeHead(200, { 'Content-Type': 'text/plain' });
+
+   // Node.js program to print numbers from 1 to 100 with conditions
+   for (let i = 1; i <= 100; i++) {
+       if (i % 3 === 0 && i % 5 === 0) {
+           response.write('foobar\n'); // Add newline after each output
+       } else if (i % 3 === 0) {
+           response.write('foo\n');
+       } else if (i % 5 === 0) {
+           response.write('bar\n');
+       } else {
+           response.write(i + '\n'); // Add newline after each number
+       }
+   }
+
+   response.end();  // End the response
+});
+
+server.listen(PORT, () => {
+    console.log(`SERVER IS LISTENING ON PORT ${PORT}`);
+});
+
+==========================================================================
+React-----
+
+Build a React Clock app showing time (hh:mm:ss) of any three countr
+
+==========================================================================
