@@ -322,3 +322,67 @@ React-----
 Build a React Clock app showing time (hh:mm:ss) of any three countr
 
 ==========================================================================
+
+AJAX- cricket 
+-------
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Scoreboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .scoreboard { margin: 20px; padding: 10px; border: 1px solid #ddd; }
+        .team { font-weight: bold; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+<h2>Live Cricket Scoreboard</h2>
+<div id="scoreboard" class="scoreboard">
+    Loading scoreboard...
+</div>
+
+<script>
+    // URL provided by the faculty where JSON data is hosted
+    const url = "https://example.com/live-score.json";  // Replace with actual URL
+
+    function fetchScoreboard() {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const data = JSON.parse(xhr.responseText);
+                displayScoreboard(data);
+            }
+        };
+        xhr.send();
+    }
+
+    function displayScoreboard(data) {
+        const scoreboard = document.getElementById("scoreboard");
+        scoreboard.innerHTML = `
+            <p><strong>Date:</strong> ${data.date}</p>
+            <p><strong>Venue:</strong> ${data.venue}</p>
+            <p><strong>Teams:</strong> ${data.teams[0]} vs ${data.teams[1]}</p>
+            ${data.innings.map(inn => `
+                <div class="team">
+                    <h3>${inn.team} - ${inn.score.runs}/${inn.score.wickets} (${inn.score.overs} overs)</h3>
+                    ${inn.players.map(player => `
+                        <p>${player.name}: ${player.runs} runs (${player.balls} balls)</p>
+                    `).join('')}
+                </div>
+            `).join('')}
+        `;
+    }
+
+    // Refresh the scoreboard every 30 seconds
+    setInterval(fetchScoreboard, 30000);
+    fetchScoreboard();  // Initial load
+</script>
+
+</body>
+</html>
