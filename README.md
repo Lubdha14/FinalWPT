@@ -1,5 +1,5 @@
 REACT------
-npm install -g create-react-app
+npm install -g npx
 npx create-react-app my-app
 cd my-app
 npm start
